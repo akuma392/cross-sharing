@@ -10,8 +10,7 @@ var userSchema = new Schema(
     password: { type: String, require: true },
     avatar: String,
     isAdmin: { type: Boolean, default: false },
-    articleId: [{ type: Schema.Types.ObjectId, ref: "Article" }],
-    isBlock: { type: Boolean, default: false },
+    googleId: String,
   },
   { timestamps: true }
 );
@@ -52,6 +51,6 @@ userSchema.methods.userJSON = function (token) {
   };
 };
 
-var User = mongoose.model("User", userSchema);
+var User = mongoose.models.User || mongoose.model("User", userSchema);
 
 module.exports = User;
