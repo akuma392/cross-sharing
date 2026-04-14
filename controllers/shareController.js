@@ -13,4 +13,12 @@ const sendMessage = (io) => async (req, res) => {
     res.json(msg);
 };
 
-module.exports = { sendMessage };
+const getMessages = async (req, res) => {
+    const { sessionId } = req.params;
+
+    const messages = await Share.find({ sessionId }).sort({ createdAt: -1 });
+
+    res.json(messages);
+};
+
+module.exports = { sendMessage, getMessages };

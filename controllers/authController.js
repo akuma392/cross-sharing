@@ -10,7 +10,7 @@ const register = async (req, res) => {
         password: await bcrypt.hash(password, 10),
     });
 
-    res.json({ token: generateToken(user._id), user });
+    res.json({ token: generateToken(user._id), user: user.userJSON() });
 };
 
 const login = async (req, res) => {
