@@ -423,16 +423,5 @@ This app enables:
 - WhatsApp (real-time sync concept)
 
 ---
-
-# 🧑‍💻 Author Notes
-
-This project is ideal for learning:
-
-- WebSockets (Socket.IO)
-- Backend architecture
-- Real-time systems
-- Device-session management
-
----
 // TODO
 🔥 Ready to build frontend next!
